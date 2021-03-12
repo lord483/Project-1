@@ -33,7 +33,6 @@ const Wrapper = styled.nav`
 		margin: 0;
 		padding: 0;
 	}
-	border: solid 1px black;
 
 	.nav-container {
 		display: flex;
@@ -41,10 +40,10 @@ const Wrapper = styled.nav`
 		display: -moz-box;
 		display: -ms-flexbox;
 		display: -webkit-flex;
-		border-bottom: solid 1px black;
+		border-bottom: solid 2px black;
 		align-items: center;
-		justify-content: flex-end;
 		padding: 1rem;
+		text-align: center;
 	}
 
 	.nav-container > .nav-item {
@@ -54,8 +53,7 @@ const Wrapper = styled.nav`
 
 	.nav-heading {
 		list-style-type: none;
-
-		justify-content: flex-start;
+		margin-left: 0;
 		flex: 5;
 	}
 `;

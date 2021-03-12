@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-function Card({ id, std, price, curriculum }) {
+const Card = ({ std, price, curriculum }) => {
 	return (
-		<Wrapper>
+		<Wrapper className="class_card">
 			<div className="card_head">Class: {std}th</div>
 			<div className="card_body">{curriculum}</div>
 			<div className="card_footer">Price: Rs.{price}</div>
 		</Wrapper>
 	);
-}
+};
 
 const Wrapper = styled.section`
 	text-align: center;
