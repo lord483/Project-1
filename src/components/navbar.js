@@ -1,7 +1,6 @@
 import React from "react";
-import { BrowserRouter } from "react-router-dom";
 import styled from "styled-components";
-import { Link, BrowserRouter as Router } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Navbar() {
 	return (
@@ -50,15 +49,13 @@ const Wrapper = styled.nav`
 
 	.nav-container > .nav-item {
 		list-style-type: none;
-
-		flex: 1;
+		flex: 1 1 30px;
 	}
 
 	.nav-heading {
-		display: inline-block;
+		list-style-type: none;
 
-		flex: 1;
-		justify-content: center;
+		justify-content: flex-start;
 		flex: 5;
 	}
 `;
