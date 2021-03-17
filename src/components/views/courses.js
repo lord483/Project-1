@@ -8,20 +8,23 @@ function Courses() {
 	return (
 		<Wrapper>
 			<Navbar />
-			<h1 className="course_heading">Our Courses</h1>
-			<div className="container">
-				{data.map((item) => {
-					return <Card key={item.id} {...item} />;
-				})}
+			<div>
+				<h1 className="course_heading">Our Courses</h1>
+				<div className="container">
+					{data.map((item) => {
+						return <Card key={item.id} {...item} />;
+					})}
+				</div>
 			</div>
 		</Wrapper>
 	);
 }
 
-const Wrapper = styled.section`
-	.course_heading {
-		text-align: center;
-	}
+const Wrapper = styled.main`
+	position: relative;
+	top: 5rem;
+	text-align: center;
+
 	.container {
 		display: flex;
 		flex-wrap: wrap;
@@ -30,7 +33,7 @@ const Wrapper = styled.section`
 	}
 	.class_card {
 		flex: 1 1 27%;
-		padding: 2.5rem;
+		padding: 2rem;
 	}
 `;
 

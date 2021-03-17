@@ -29,12 +29,25 @@ function Navbar() {
 }
 
 const Wrapper = styled.nav`
-	* {
-		margin: 0;
-		padding: 0;
+	@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+		.nav-container {
+			-webkit-backdrop-filter: blur(7px);
+			backdrop-filter: blur(7px);
+		}
+	}
+
+	/* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
+	@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+		.nav-container {
+			background-color: rgba(0, 0, 0, 0.9);
+		}
 	}
 
 	.nav-container {
+		position: fixed;
+		width: 100%;
+
+		top: 0px;
 		display: flex;
 		display: -webkit-box;
 		display: -moz-box;
@@ -54,7 +67,7 @@ const Wrapper = styled.nav`
 	.nav-heading {
 		list-style-type: none;
 		margin-left: 0;
-		flex: 5;
+		width: 50%;
 	}
 `;
 
