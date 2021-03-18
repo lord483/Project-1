@@ -48,25 +48,26 @@ const Wrapper = styled.nav`
 		display: -moz-box;
 		display: -ms-flexbox;
 		display: -webkit-flex;
-		border-bottom: solid 2px black;
 		align-items: center;
 		padding: 1rem;
-		text-align: center;
 	}
 
 	.nav-item {
 		list-style-type: none;
-		flex: 1 1 30px;
+		width: 13.55%;
+		text-align: center;
 	}
 
-	.nav-item a {
+	.nav-item a,
+	.nav-heading a {
 		color: #def2f1;
 	}
 
 	.nav-heading {
 		list-style-type: none;
 		margin-left: 0;
-		width: 50%;
+		width: 34.5%;
+		text-align: center;
 	}
 `;
 
