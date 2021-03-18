@@ -29,23 +29,18 @@ function Navbar() {
 }
 
 const Wrapper = styled.nav`
-	@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-		.nav-container {
-			-webkit-backdrop-filter: blur(7px);
-			backdrop-filter: blur(7px);
-		}
-	}
-
-	/* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
-	@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-		.nav-container {
-			background-color: rgba(0, 0, 0, 0.9);
-		}
-	}
-
 	.nav-container {
+		-webkit-backdrop-filter: blur(6px);
+		backdrop-filter: blur(6px);
+
+		/* slightly transparent fallback for Firefox (not supporting backdrop-filter) */
+		@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+			background-color: rgba(222, 242, 241 0.9);
+		}
+
 		position: fixed;
 		width: 100%;
+		background-color: rgba(43, 122, 120, 0.7);
 
 		top: 0px;
 		display: flex;
@@ -59,9 +54,13 @@ const Wrapper = styled.nav`
 		text-align: center;
 	}
 
-	.nav-container > .nav-item {
+	.nav-item {
 		list-style-type: none;
 		flex: 1 1 30px;
+	}
+
+	.nav-item a {
+		color: #def2f1;
 	}
 
 	.nav-heading {

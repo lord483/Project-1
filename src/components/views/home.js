@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../navbar";
 import Footer from "../footer";
 import Card from "../card";
-import class_img from "../../assets/images/class_img.jpg";
+// import class_img from "/images/class_img.jpg";
 import styled from "styled-components";
 import { IoPersonCircle } from "react-icons/io5";
 
@@ -34,7 +34,7 @@ function Home() {
 					</p>
 				</div>
 				<div className="intro_image">
-					<img src={class_img} alt="class" />
+					<img src="/images/class_img.jpg" alt="class" />
 				</div>
 			</section>
 
@@ -83,7 +83,7 @@ function Home() {
 
 const Wrapper = styled.main`
 	position: relative;
-	top: 5rem;
+	top: 3.5rem;
 	margin: 1vh auto 1vh;
 
 	// * {
@@ -104,6 +104,7 @@ const Wrapper = styled.main`
 		display: flex;
 		align-items: center;
 		margin-bottom: 0.5rem;
+		background-color: rgb(222, 242, 241);
 	}
 
 	.intro_text {
