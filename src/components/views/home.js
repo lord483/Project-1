@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../navbar";
-import Footer from "../footer";
-import Card from "../card";
+// import Footer from "../footer";
+// import Card from "../card";
 // import class_img from "/images/class_img.jpg";
 import styled from "styled-components";
 import { IoPersonCircle } from "react-icons/io5";
@@ -15,49 +15,24 @@ function Home() {
 			<div className="home-container">
 				<section className="intro_section">
 					<div className="intro_text">
-						<h1>Intro</h1>
+						<h1>Lorem ipsum dolor sit amet.</h1>
+						<button className="intro_btn btn">Learn More</button>
 						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
-							fugit quasi illo numquam omnis, voluptas autem quia, esse tenetur
-							suscipit placeat officiis earum veritatis dolores nihil assumenda
-							eos, quas adipisci? Voluptates et eveniet, non, recusandae
-							repellendus sunt molestias tempore nesciunt nemo quis ipsum
-							consectetur quae facere harum incidunt iste quaerat quam! Incidunt
-							mollitia, assumenda minus modi doloribus doloremque harum nisi?
-							Odit nam assumenda, adipisci aliquid recusandae doloribus harum
-							amet perferendis neque ipsa magnam, exercitationem quasi beatae,
-							placeat molestias tenetur quidem laudantium sunt ad minima animi!
-							Et necessitatibus animi veritatis officia. Repellendus, porro?
-							Ipsam odio, aliquam omnis rem maiores eaque quis exercitationem
-							recusandae tempore enim quo ab incidunt saepe iste atque inventore
-							ad fugiat non voluptates assumenda, quasi illo voluptatum quaerat.
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde
+							aliquam est facilis tempora rerum vel quaerat optio deleniti
+							itaque, quam iusto expedita nemo fugiat voluptate quis fugit
+							tenetur neque eaque? Obcaecati, alias aperiam. Sint at sequi
+							facilis nulla minima repellendus, nostrum debitis vitae fugit
+							iure, nisi quo similique. Ad beatae voluptatem nam velit expedita
+							iste quaerat provident autem adipisci odio. Voluptatem suscipit
+							dicta Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+							Unde aliquam est facilis tempora rerum vel quaerat optio deleniti
+							itaque, quam iusto expedita nemo fugiat voluptate quis fugit
+							tenetur neque aboriosam architecto nulla nesciunt, quaerat tempora
+							officia illo distinctio maiores quisquam nam consequatur ea sequi
+							modi incidunt error fug
 						</p>
 					</div>
-					<div className="intro_image">
-						<img src="/images/class_img.jpg" alt="class" />
-					</div>
-				</section>
-
-				<section className="info_section">
-					<h1>Info</h1>
-					<p>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde
-						aliquam est facilis tempora rerum vel quaerat optio deleniti itaque,
-						quam iusto expedita nemo fugiat voluptate quis fugit tenetur neque
-						eaque? Obcaecati, alias aperiam. Sint at sequi facilis nulla minima
-						repellendus, nostrum debitis vitae fugit iure, nisi quo similique.
-						Ad beatae voluptatem nam velit expedita iste quaerat provident autem
-						adipisci odio. Voluptatem suscipit dicta sint et laudantium libero
-						fugit sunt ipsam a quia tempora nostrum quidem veritatis modi ipsum
-						maxime culpa minima nemo, numquam deserunt saepe? Ducimus magnam
-						incidunt eligendi dolore! Explicabo sunt a esse quam quod similique
-						recusandae. Nemo accusamus laborum aliquid tenetur magnam nisi quasi
-						tempore optio, aperiam repellat fugiat expedita repellendus numquam
-						voluptates deserunt nam sapiente commodi nobis! Sit, aspernatur at
-						iure, provident molestiae atque ab, distinctio placeat quis illum
-						sed eum aperiam consequatur optio accusamus in aliquam. Voluptas
-						nobis explicabo culpa, voluptatibus omnis atque porro eaque facere?
-					</p>
 				</section>
 
 				<section className="testimonials_container">
@@ -65,7 +40,7 @@ function Home() {
 						<IoPersonCircle className="student_icon" />
 					</div>
 					<div className="testimonials">
-						<h1>Slider</h1>
+						<h1>What Our Students say about Us?</h1>
 						<p>
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos eius
 							accusamus facilis eveniet, cupiditate expedita, ex voluptas autem
@@ -85,35 +60,56 @@ function Home() {
 
 const Wrapper = styled.main`
 	position: relative;
-	top: 64px;
+	top: 4rem;
+
 	.intro_section {
 		padding: 1.5rem 16.25%;
 		display: flex;
+		display: -webkit flex
 		align-items: center;
-		background-color: #3aafa9;
-	}
-
-	.intro_image img {
-		width: 100%;
-		padding: 0.5rem;
-	}
-
-	.intro_image {
-		width: 50%;
-		margin-left: 6.85rem;
+		background: url("/images/class_img1.jpg");
+		background-size: cover;
+		height: 30rem;
 	}
 
 	.intro_text {
-		width: 40%;
-		margin-right: 1rem;
+		margin: auto;
+		display: flex;
 	}
 
 	.intro_text h1 {
-		margin-bottom: 1rem;
+		font-weight: 600;
+		color: #deffff;
+		margin: auto;
+		font-size: 40px;
+		width: 40%;
+		line-height: 2;
+		padding: 1rem;
 	}
 
-	.info_section {
-		padding: 1.5rem 16.25%;
+	.intro_text p {
+		backdrop-filter: blur(5px);
+		margin: auto;
+		color: #ffffff;
+		background-color: rgba(240,240,240, 0.3);
+		border-radius: 10px;
+		width: 35%;
+		padding: 1rem;
+		box-shadow: 5px 10px 18px rgba(0,0,0,0.4);
+	}
+
+	.intro_btn {
+		position: absolute;
+		top: 50%;
+		left: 20.5%;
+		height: 40px;
+		width: 125px;
+		color: white;
+		background-color: rgba(43, 122, 120, 0.8);
+		border: none;
+		border-radius: 7px;
+		font-size: 0.8rem;
+		padding-bottom: 3px;
 	}
 
 	.testimonials_container {
