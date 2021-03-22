@@ -6,6 +6,7 @@ import Slider from "../slider";
 // import class_img from "/images/class_img.jpg";
 import styled from "styled-components";
 import { IoPersonCircle } from "react-icons/io5";
+import bgImage from '../../assets/class_img1.jpg';
 
 function Home() {
 	return (
@@ -70,7 +71,7 @@ const Wrapper = styled.main`
 		display: flex;
 		display: -webkit flex
 		align-items: center;
-		background: url("/images/class_img1.jpg");
+		background: url(${bgImage});
 		background-size: cover;
 		height: 30rem;
 	}
