@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../navbar";
 // import Footer from "../footer";
 // import Card from "../card";
+import Slider from "../slider";
 // import class_img from "/images/class_img.jpg";
 import styled from "styled-components";
 import { IoPersonCircle } from "react-icons/io5";
@@ -35,7 +36,9 @@ function Home() {
 					</div>
 				</section>
 
-				<section className="testimonials_container">
+				<Slider />
+
+				{/* <section className="testimonials_container">
 					<div className="students">
 						<IoPersonCircle className="student_icon" />
 					</div>
@@ -52,7 +55,7 @@ function Home() {
 							Expedita, cum!
 						</p>
 					</div>
-				</section>
+				</section> */}
 			</div>
 		</Wrapper>
 	);
@@ -60,7 +63,7 @@ function Home() {
 
 const Wrapper = styled.main`
 	position: relative;
-	top: 4rem;
+	top: 3.3rem;
 
 	.intro_section {
 		padding: 1.5rem 16.25%;
@@ -73,6 +76,7 @@ const Wrapper = styled.main`
 	}
 
 	.intro_text {
+		position: relative;
 		margin: auto;
 		display: flex;
 	}
@@ -91,17 +95,17 @@ const Wrapper = styled.main`
 		backdrop-filter: blur(5px);
 		margin: auto;
 		color: #ffffff;
-		background-color: rgba(240,240,240, 0.3);
+		background-color: rgba(0,0,0, 0.1);
 		border-radius: 10px;
-		width: 35%;
-		padding: 1rem;
-		box-shadow: 5px 10px 18px rgba(0,0,0,0.4);
+		width: 40%;
+		padding: 2rem;
+		box-shadow: 5px 10px 15px rgba(0,0,0,0.4);
 	}
 
 	.intro_btn {
 		position: absolute;
-		top: 50%;
-		left: 20.5%;
+		top: 75%;
+		left: 6.5%;
 		height: 40px;
 		width: 125px;
 		color: white;
@@ -110,6 +114,11 @@ const Wrapper = styled.main`
 		border-radius: 7px;
 		font-size: 0.8rem;
 		padding-bottom: 3px;
+		cursor: pointer;
+	}
+
+	.intro_btn:hover {
+		
 	}
 
 	.testimonials_container {

@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../navbar";
 import Card from "../card";
-import data from "../../assets/data";
+import { classData } from "../../assets/data";
 import styled from "styled-components";
 
 function Courses() {
@@ -11,7 +11,7 @@ function Courses() {
 			<div>
 				<h1 className="course_heading">Our Courses</h1>
 				<div className="container">
-					{data.map((item) => {
+					{classData.map((item) => {
 						return <Card key={item.id} {...item} />;
 					})}
 				</div>
