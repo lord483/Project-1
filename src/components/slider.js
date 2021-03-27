@@ -1,65 +1,53 @@
-import React, { useRef, useEffect } from "react";
-import { AiOutlineLeft } from "react-icons/ai";
-import { AiOutlineRight } from "react-icons/ai";
+import React, { useEffect, useState, useRef } from "react";
+import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { studentsData } from "../assets/data";
 import "./slider.css";
 
 const Slider = () => {
-	const carouselContainer = useRef();
-	const carouselSlide = useRef();
-	const carouselArticle = useRef();
+	const [index, setIndex] = useState(0);
+	const [size, setSize] = useState(0);
+	const slideContainer = useRef();
 
-	// Slide Counter
-	let counter = 0;
-	const size = carouselArticle[0].clientWidth;
+	useEffect(() => {
+		setSize(slideContainer.current.clientWidth);
+		console.log(slideContainer.current);
+	});
 
-	const nextSlide = () => {
-		if (counter > carouselArticle.current.length - 1) return;
-		carouselSlide.current.style.transition = "transform 0.4s ease-in-out";
-		counter++;
-		carouselSlide.current.style.transform =
-			"translateX(" + -size * counter + "px)";
+	const customStyle = {
+		transform: `translateX(${-size * index}px)`,
+		transition: "transform 0.4s ease-in-out",
 	};
 
 	const prevSlide = () => {
-		if (counter < 0) return;
-		carouselSlide.current.style.transition = "transform 0.4s ease-in-out";
-		counter--;
-		carouselSlide.current.style.transform =
-			"translateX(" + -size * counter + "px)";
+		if (index <= 0) {
+			setIndex(studentsData.length - 1);
+		} else {
+			setIndex(index - 1);
+		}
+	};
+
+	const nextSlide = () => {
+		if (index >= studentsData.length - 1) {
+			setIndex(0);
+		} else {
+			setIndex(index + 1);
+		}
 	};
 
 	useEffect(() => {
-		const slideInterval = setInterval(nextSlide, 3000);
+		const slideInterval = setInterval(nextSlide, 5000);
 		return () => {
-			carouselSlide.current.addEventListener("mouseenter", () => {
-				clearInterval(slideInterval);
-			});
+			clearInterval(slideInterval);
 		};
-	}, []);
-
-	useEffect(() => {
-		carouselSlide.current.addEventListener("transitionend", () => {
-			if (counter < 0) {
-				carouselSlide.style.transition = "none";
-				counter = carouselArticle.length - 1;
-				carouselSlide.style.transform = "translateX(" + -size * counter + "px)";
-			} else if (counter > carouselArticle.length - 1) {
-				carouselSlide.style.transition = "none";
-				counter = carouselArticle.length - counter;
-				carouselSlide.style.transform =
-					"translateX(-" + -size * counter + "px)";
-			}
-		});
-	}, []);
+	});
 
 	return (
 		<main className="wrapper">
-			<div className="mian-title">
+			<div className="main-title">
 				<h1>What people say about us ?</h1>
 			</div>
-			<div className="carousel-container" ref={carouselContainer}>
-				<div className="carousel-slide" ref={carouselSlide}>
+			<div className="carousel-container">
+				<div className="carousel-slide" style={customStyle}>
 					{studentsData.map((person, personIndex) => {
 						const { id, name, title, review, image } = person;
 
@@ -68,7 +56,7 @@ const Slider = () => {
 								key={id}
 								id={id}
 								className="slide-container"
-								ref={carouselArticle}
+								ref={slideContainer}
 							>
 								<img src={image} alt={name} className="person-img" />
 								<h3>{name}</h3>
@@ -79,10 +67,10 @@ const Slider = () => {
 					})}
 				</div>
 			</div>
-			<button id="prevBtn" onClick={prevSlide()}>
+			<button id="prevBtn" onClick={prevSlide}>
 				<AiOutlineLeft />
 			</button>
-			<button id="nextBtn" onClick={nextSlide()}>
+			<button id="nextBtn" onClick={nextSlide}>
 				<AiOutlineRight />
 			</button>
 		</main>
