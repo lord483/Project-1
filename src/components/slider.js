@@ -11,7 +11,7 @@ const Slider = () => {
 
 	// Slide Counter
 	let counter = 0;
-	const size = carouselArticle.current[0].clientWidth;
+	const size = carouselArticle[0].clientWidth;
 
 	const nextSlide = () => {
 		if (counter > carouselArticle.current.length - 1) return;
