@@ -8,38 +8,30 @@ const Slider = () => {
 	const [size, setSize] = useState(0);
 	const slideContainer = useRef();
 
-	useEffect(() => {
-		setSize(slideContainer.current.clientWidth);
-		console.log(slideContainer.current);
-	});
-
+	// Custom CSS for sliding animation
 	const customStyle = {
 		transform: `translateX(${-size * index}px)`,
 		transition: "transform 0.4s ease-in-out",
 	};
 
 	const prevSlide = () => {
-		if (index <= 0) {
-			setIndex(studentsData.length - 1);
-		} else {
-			setIndex(index - 1);
-		}
+		index <= 0 ? setIndex(studentsData.length - 1) : setIndex(index - 1);
 	};
 
 	const nextSlide = () => {
-		if (index >= studentsData.length - 1) {
-			setIndex(0);
-		} else {
-			setIndex(index + 1);
-		}
+		index >= studentsData.length - 1 ? setIndex(0) : setIndex(index + 1);
 	};
 
+	/* 
+	Get container width,
+	setInterval for auto sliding,
+	and clear interval at the end to avoid glitches and bugs
+	*/
 	useEffect(() => {
+		setSize(slideContainer.current.clientWidth);
 		const slideInterval = setInterval(nextSlide, 5000);
-		return () => {
-			clearInterval(slideInterval);
-		};
-	});
+		return () => clearInterval(slideInterval);
+	}, [nextSlide]);
 
 	return (
 		<main className="wrapper">
