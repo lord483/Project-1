@@ -40,7 +40,6 @@ const Slider = () => {
 			</div>
 			<div className="carousel-container">
 				<div className="carousel-slide" style={customStyle}>
-					{studentsData.map((person) => {
 					{studentsData.map((person, personIndex) => {
 						const { id, name, title, review, image } = person;
 
