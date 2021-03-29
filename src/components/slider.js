@@ -8,10 +8,7 @@ const Slider = () => {
 	const [size, setSize] = useState(0);
 	const slideContainer = useRef();
 
-<<<<<<< HEAD
-=======
 	// Custom CSS for sliding animation
->>>>>>> 7950bebdbf76d6322c871aa5c672f8e782047ea9
 	const customStyle = {
 		transform: `translateX(${-size * index}px)`,
 		transition: "transform 0.4s ease-in-out",
@@ -25,14 +22,11 @@ const Slider = () => {
 		index >= studentsData.length - 1 ? setIndex(0) : setIndex(index + 1);
 	};
 
-<<<<<<< HEAD
-=======
 	/* 
 	Get container width,
 	setInterval for auto sliding,
 	and clear interval at the end to avoid glitches and bugs
 	*/
->>>>>>> 7950bebdbf76d6322c871aa5c672f8e782047ea9
 	useEffect(() => {
 		setSize(slideContainer.current.clientWidth);
 		const slideInterval = setInterval(nextSlide, 5000);
@@ -46,11 +40,9 @@ const Slider = () => {
 			</div>
 			<div className="carousel-container">
 				<div className="carousel-slide" style={customStyle}>
-<<<<<<< HEAD
 					{studentsData.map((person) => {
 =======
 					{studentsData.map((person, personIndex) => {
->>>>>>> 7950bebdbf76d6322c871aa5c672f8e782047ea9
 						const { id, name, title, review, image } = person;
 
 						return (
