@@ -1,24 +1,23 @@
 import React from "react";
 import Navbar from "../navbar";
-// import Footer from "../footer";
-// import Card from "../card";
+import Footer from "../footer";
 import Slider from "../slider";
-// import class_img from "/images/class_img.jpg";
 import styled from "styled-components";
-import { IoPersonCircle } from "react-icons/io5";
-import bgImage from '../../assets/class_img1.jpg';
+import bgImage from "../../assets/class_img1.jpg";
 
 function Home() {
 	return (
 		<Wrapper>
 			<Navbar />
-			{/* <Card />
-			<Footer /> */}
+
 			<div className="home-container">
 				<section className="intro_section">
 					<div className="intro_text">
-						<h1>Lorem ipsum dolor sit amet.</h1>
-						<button className="intro_btn btn">Learn More</button>
+						<div className="intro-top">
+							<h1 className="intro-heading">Lorem ipsum dolor sit amet.</h1>
+							<button className="intro_btn btn">Learn More</button>
+						</div>
+
 						<p>
 							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde
 							aliquam est facilis tempora rerum vel quaerat optio deleniti
@@ -36,28 +35,9 @@ function Home() {
 						</p>
 					</div>
 				</section>
-
 				<Slider />
-
-				{/* <section className="testimonials_container">
-					<div className="students">
-						<IoPersonCircle className="student_icon" />
-					</div>
-					<div className="testimonials">
-						<h1>What Our Students say about Us?</h1>
-						<p>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos eius
-							accusamus facilis eveniet, cupiditate expedita, ex voluptas autem
-							nobis voluptates ut facere molestiae maiores consequatur rem
-							consequuntur eaque. Culpa, unde! Esse culpa architecto eos
-							adipisci! Quibusdam laboriosam architecto nulla nesciunt, quaerat
-							tempora officia illo distinctio maiores quisquam nam consequatur
-							ea sequi modi incidunt error fugit optio recusandae maxime!
-							Expedita, cum!
-						</p>
-					</div>
-				</section> */}
 			</div>
+			<Footer />
 		</Wrapper>
 	);
 }
@@ -67,7 +47,6 @@ const Wrapper = styled.main`
 	top: 3.3rem;
 
 	.intro_section {
-		padding: 1.5rem 16.25%;
 		display: flex;
 		display: -webkit flex
 		align-items: center;
@@ -80,46 +59,45 @@ const Wrapper = styled.main`
 		position: relative;
 		margin: auto;
 		display: flex;
+		padding: 3rem;
+		justify-content: space-evenly;
+		align-items: center;
+
 	}
 
 	.intro_text h1 {
 		font-weight: 600;
 		color: #deffff;
-		margin: auto;
+		margin-left: 5rem;
 		font-size: 40px;
-		width: 40%;
+		width: 30rem;
 		line-height: 2;
-		padding: 1rem;
 	}
 
 	.intro_text p {
 		backdrop-filter: blur(5px);
-		margin: auto;
 		color: #ffffff;
 		background-color: rgba(0,0,0, 0.1);
 		border-radius: 10px;
 		width: 40%;
+		min-width: 500px;
 		padding: 2rem;
 		box-shadow: 5px 10px 15px rgba(0,0,0,0.4);
 	}
 
 	.intro_btn {
-		position: absolute;
-		top: 75%;
-		left: 6.5%;
+		position: relative;
+		top: 35%;
+		left: 14%;
 		height: 40px;
 		width: 125px;
 		color: white;
-		background-color: rgba(43, 122, 120, 0.8);
+		background-color: rgb(43, 122, 120);
 		border: none;
 		border-radius: 7px;
 		font-size: 0.8rem;
 		padding-bottom: 3px;
 		cursor: pointer;
-	}
-
-	.intro_btn:hover {
-		
 	}
 
 	.testimonials_container {
