@@ -10,7 +10,7 @@ import {
 function Footer() {
 	return (
 		<Wrapper>
-			<h1>LOGO</h1>
+			<h1 className="footer-logo">LOGO</h1>
 			<div className="contact-form-container">
 				<form className="contact-form">
 					<input type="text" name="name" id="name" placeholder="Your Name" />
@@ -28,41 +28,43 @@ function Footer() {
 				</button>
 			</div>
 
-			<div className="sitemap-container">
-				<h4>Site Map</h4>
-				<ul className="sitemap-list">
-					<li className="sitemap-item">About Us</li>
-					<li className="sitemap-item">Our Courses</li>
-					<li className="sitemap-item">Contact Us</li>
-					<li className="sitemap-item">Gallery</li>
-					<li className="sitemap-item">More Link</li>
-				</ul>
-			</div>
+			<div className="sitemap-social">
+				<div className="sitemap-container">
+					<h4>Site Map</h4>
+					<ul className="sitemap-list">
+						<li className="sitemap-item">About Us</li>
+						<li className="sitemap-item">Our Courses</li>
+						<li className="sitemap-item">Contact Us</li>
+						<li className="sitemap-item">Gallery</li>
+						<li className="sitemap-item">More Link</li>
+					</ul>
+				</div>
 
-			<div className="social-container">
-				<h4>Connect to us:</h4>
-				<ul className="social-list">
-					<li className="social-item facebook">
-						<a href="#">
-							<FaFacebookSquare className="social-icon fb-icon" /> Facebook
-						</a>
-					</li>
-					<li className="social-item instagram">
-						<a href="#">
-							<FaInstagram className="social-icon in-icon" /> Instagram
-						</a>
-					</li>
-					<li className="social-item twitter">
-						<a href="#">
-							<FaTwitter className="social-icon tw-icon" /> Twitter
-						</a>
-					</li>
-					<li className="social-item phone">
-						<a href="tel:555-555-1212">
-							<FaPhoneSquareAlt className="social-icon" /> 555-555-1212
-						</a>
-					</li>
-				</ul>
+				<div className="social-container">
+					<h4>Connect to us:</h4>
+					<ul className="social-list">
+						<li className="social-item facebook">
+							<a href="#">
+								<FaFacebookSquare className="social-icon fb-icon" /> Facebook
+							</a>
+						</li>
+						<li className="social-item instagram">
+							<a href="#">
+								<FaInstagram className="social-icon in-icon" /> Instagram
+							</a>
+						</li>
+						<li className="social-item twitter">
+							<a href="#">
+								<FaTwitter className="social-icon tw-icon" /> Twitter
+							</a>
+						</li>
+						<li className="social-item phone">
+							<a href="tel:555-555-1212">
+								<FaPhoneSquareAlt className="social-icon" /> 555-555-1212
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</Wrapper>
 	);
@@ -117,7 +119,7 @@ const Wrapper = styled.section`
 
 	.sitemap-container,
 	.social-container {
-		width: 20%;
+		width: 50%;
 		list-type: none;
 		height: 100%;
 	}
@@ -128,6 +130,12 @@ const Wrapper = styled.section`
 		margin-left: 0;
 		padding: 0.5rem;
 		text-align: left;
+	}
+
+	.sitemap-social {
+		display: flex;
+		justify-content: space-evenly;
+		width: 30%;
 	}
 
 	ul {
@@ -177,6 +185,31 @@ const Wrapper = styled.section`
 
 	.twitter:hover .tw-icon {
 		color: #1da1f2;
+	}
+
+	@media screen and (max-width: 767px) {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		justify-content: center;
+
+		.sitemap-social {
+			display: flex;
+			justify-content: space-evenly;
+			width: 100%;
+			margin: 3rem auto;
+			margin-left: 10%;
+		}
+
+		.footer-logo {
+			margin: 5rem auto;
+			margin-left: 10%;
+			padding: 1rem;
+		}
+		.contact-form-container {
+			margin: auto;
+			margin-left: 12%;
+		}
 	}
 `;
 
