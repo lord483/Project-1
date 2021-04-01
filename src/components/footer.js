@@ -196,7 +196,7 @@ const Wrapper = styled.section`
 		.sitemap-social {
 			display: flex;
 			justify-content: space-evenly;
-			width: 100%;
+			width: 90%;
 			margin: 3rem auto;
 			margin-left: 10%;
 		}

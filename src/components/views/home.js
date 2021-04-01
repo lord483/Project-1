@@ -97,39 +97,28 @@ const Wrapper = styled.main`
 		position: relative;
 
 		.intro_section {
-			background: url(${bgImage});
-			background-size: cover;
 			height: auto;
 		}
 
 		.intro_text {
 			display: flex;
 			flex-direction: column;
-			margin: auto;
 			padding: 1rem;
+			width: 100%;
 		}
 
 		.intro_text h1 {
-			font-weight: 600;
-			color: #deffff;
-			font-size: 40px;
 			width: 100%;
-			line-height: 1;
 			padding: 1rem;
 			margin: auto;
 			text-align: center;
 		}
 
 		.intro_text p {
-			backdrop-filter: blur(5px);
-			color: #ffffff;
-			background-color: rgba(0, 0, 0, 0.1);
-			border-radius: 10px;
 			width: 90%;
 			min-width: 300px;
 			padding: 1rem;
 			margin: 2rem auto;
-			box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.4);
 		}
 	}
 `;

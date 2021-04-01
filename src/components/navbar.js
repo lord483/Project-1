@@ -119,8 +119,6 @@ const Wrapper = styled.nav`
 			bottom: 41%;
 			left: 35%;
 			display: inline-block;
-			padding: 5px;
-			border-radius: 5px;
 			cursor: pointer;
 		}
 
@@ -128,7 +126,9 @@ const Wrapper = styled.nav`
 			width: 20px;
 			height: 2px;
 			background: white;
-			margin: 5px auto;
+			margin-top: 5px;
+			margin-bottom: 5px;
+
 		}
 
 }
