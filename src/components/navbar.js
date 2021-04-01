@@ -1,16 +1,34 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 function Navbar() {
+	const [isNavOpen, setIsNavOpen] = useState(false);
+	const [navHeight, setNavHeight] = useState("6%");
+
+	const customStyle = {
+		height: navHeight,
+	};
+
+	useEffect(() => {
+		if (isNavOpen) {
+			setNavHeight("28.6%");
+		} else {
+			setNavHeight("6%");
+		}
+	}, [isNavOpen]);
+
 	return (
 		<Wrapper>
-			<ul className="nav-container">
+			<ul className="nav-container" style={customStyle}>
 				<li className="nav-heading">
 					<h1>
 						<Link to="/">Home</Link>
 					</h1>
-					<div className="mobile-nav-container">
+					<div
+						className="mobile-nav-container"
+						onClick={() => setIsNavOpen(!isNavOpen)}
+					>
 						<div className="mobile-nav-btn"></div>
 						<div className="mobile-nav-btn"></div>
 						<div className="mobile-nav-btn"></div>
@@ -94,30 +112,41 @@ const Wrapper = styled.nav`
     .nav-container {
 			display: flex;
 			flex-direction: column;
-			height:55px;
+			height: 55px;
 			overflow: hidden;
 			margin: auto;
+			transition: all 0.2s ease-in;
 		}
+
 		.nav-heading {
 			margin: 0.4rem auto;
 		}
+
 		.nav-heading, .nav-item {
 			width:100%;
 		}
 
+		.nav-item:nth-child(2) {
+			margin-left: auto;
+		}
+
 		.nav-item {
-			border-bottom: solid 2px rgba(0,0,0, 0.5);
 			padding: 0.25rem;
 		}
 
 		.nav-item a {
+			border-bottom: none;
 			padding: 0.5rem;
+		}
+
+		.nav-item a:hover {
+			border-bottom: none;
 		}
 
 		.mobile-nav-container {
 			position: relative;
-			bottom: 41%;
-			left: 35%;
+			bottom: 40%;
+			left: 40%;
 			display: inline-block;
 			cursor: pointer;
 		}
@@ -128,11 +157,8 @@ const Wrapper = styled.nav`
 			background: white;
 			margin-top: 5px;
 			margin-bottom: 5px;
-
 		}
-
 }
-	
 	}
 `;
 
